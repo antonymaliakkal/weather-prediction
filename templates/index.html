@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input
+         {
+            padding: 5px 15px;
+            text-align: center;
+            margin-right: 8vh;
+            margin-left: -7vh;
+
+         }
+
+        div
+         {
+            margin-top: 20vh;
+            margin-bottom: 20vh;
+            margin-left: 70vh;
+            margin-right: 50vh;
+
+         }
+
+        button
+         {
+            padding: 6px 6px;
+            margin-left: 15vh;
+         }
+        
+        select
+         {
+            padding: 5px 5px;
+            margin-left: 5vh;
+         }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>WEATHER PREDICTION</h2>
+        <form action="{{ url_for('predict')}}" method = "POST">
+            <input type="number" step="0.1" placeholder="Precipitation" name="Precipitation">
+            <input type="number" step="0.1" placeholder = 'Maximum Temperature' name = "max_temp">
+            <br><br>
+            <input type="number" step="0.1" placeholder = "Minumum Temperature" name = "min_temp">
+            <input type="number" step="0.1" placeholder = "Wind" name="wind">
+            <br><br>
+            <select name = 'option'>
+                <option value="" disabled selected>Select your model</option>
+                <option value="knn">K-nearest neighbors</option>
+                <option value="rf">Random Forest</option>
+                <option value="ann">Artificial Neural Network</option>
+                <option value="gbc">Gradient Boosting Classifier</option>
+            </select>
+            <br><br>
+            <button type="submit">SUBMIT</button>
+            <br><br>
+            {{ prediction_text }}
+        </form>
+    </div>    
+    
+
+</body>
+</html>
