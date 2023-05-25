@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import pickle
 
-data = pd.read_csv('seattle-weather.csv')
+data = pd.read_csv('dataset.csv')
 
 #label encoding the output column
 

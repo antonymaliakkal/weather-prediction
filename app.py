@@ -4,10 +4,10 @@ import pickle
 
 app = Flask(__name__)
 
-knn = pickle.load(open('knn.pkl','rb'))
-rf = pickle.load(open('random_forest.pkl','rb'))
-ann = pickle.load(open('ann.pkl','rb'))
-gbc = pickle.load(open('gbc.pkl','rb'))
+knn = pickle.load(open('models/knn.pkl','rb'))
+rf = pickle.load(open('models/random_forest.pkl','rb'))
+ann = pickle.load(open('models/ann.pkl','rb'))
+gbc = pickle.load(open('models/gbc.pkl','rb'))
 
 @app.route('/')
 def home():
